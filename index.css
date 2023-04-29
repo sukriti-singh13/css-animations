@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden !important;
+}
+
+.game {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+.sky {
+  flex: 1;
+  background-color: rgb(0, 200, 255);
+}
+.land {
+  flex: 1;
+
+  background-color: rgb(15, 156, 15);
+}
+.road {
+  flex: 1;
+  background-color: rgb(110, 106, 106);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.dashed-line {
+  border: 7px dashed #c9c2c2;
+}
+
+img {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  /* -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
+  animation-name: run;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* animation-delay: 2s; */
+  /* forward keeps the element where the animation ended */
+  /* backward starts the animation from where the animation wil kick in */
+}
+.animation2 {
+  top: -10px;
+  animation-name: run;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: 5s;
+  animation-direction: reverse;
+  /* animation: run 1s linear infitie reverse; */
+}
+@keyframes run {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(-1600px);
+  }
+}
